@@ -1,13 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "binary_trees.h"
 
 /**
- * binary_tree_leaves - Count the leaves in a binary tree
+ * binary_tree_is_perfect - Checks if a binary tree is perfect
  *
- * @tree: Pointer to the root node of the tree to count leaves
+ * @tree: Pointer to the root node of the tree to check
  *
- * Description: Counts the number of leaves (nodes with no
- * children) in a binary tree. If the tree is NULL, returns 0.
- *
- * Return: Number of leaves in the binary tree.
+ * Return: 0.
  */
+
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{}

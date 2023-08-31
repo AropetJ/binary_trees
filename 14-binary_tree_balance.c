@@ -1,13 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "binary_trees.h"
 
 /**
- * binary_tree_leaves - Count the leaves in a binary tree
+ * binary_tree_balance - Measures the balance factor of a binary tree
  *
- * @tree: Pointer to the root node of the tree to count leaves
+ * @tree: Pointer to the root node of the tree to measure the balance factor
  *
- * Description: Counts the number of leaves (nodes with no
- * children) in a binary tree. If the tree is NULL, returns 0.
+ * Description: Measures the balance factor of a binary tree a binary
+ * tree. If the tree is NULL, returns 0.
  *
- * Return: Number of leaves in the binary tree.
+ * Return: Balance number of the binary tree.
  */
+
+int binary_tree_balance(const binary_tree_t *tree)
+{}
