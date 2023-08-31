@@ -16,39 +16,39 @@
 
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	binary_tree_t **queue = NULL;
+	binary_tree_t **line = NULL;
 	size_t front = 0, rear = 0, size = 0;
 
 	if (tree == NULL || func == NULL)
 		return;
 
-	queue = malloc(sizeof(binary_tree_t *) * 1024);
-	if (queue == NULL)
+	line = malloc(sizeof(binary_tree_t *) * 1024);
+	if (line == NULL)
 		return;
 
-	queue[rear++] = (binary_tree_t *)tree;
+	line[rear++] = (binary_tree_t *)tree;
 	size++;
 
 	while (size > 0)
 	{
-		binary_tree_t *current = queue[front++];
+		binary_tree_t *current = line[front++];
 
 		func(current->n);
 
 		if (current->left != NULL)
 		{
-			queue[rear++] = current->left;
+			line[rear++] = current->left;
 			size++;
 		}
 
 		if (current->right != NULL)
 		{
-			queue[rear++] = current->right;
+			line[rear++] = current->right;
 			size++;
 		}
 
 		size--;
 	}
 
-	free(queue);
+	free(line);
 }
