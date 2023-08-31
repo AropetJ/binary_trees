@@ -24,5 +24,4 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 	}
 
 	return (binary_tree_size(tree) - binary_tree_leaves(tree));
-	
 }
