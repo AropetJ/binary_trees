@@ -7,26 +7,26 @@
  *
  * @tree: Pointer to the root node of the tree to check
  *
- * Description: Checks if a binary tree is perfect, which means it is full and all
- * levels are completely filled. If the tree is NULL, returns 0.
+ * Description: Checks if a binary tree is perfect, which means
+ * it is full and all levels are completely filled. If the tree
+ * is NULL, returns 0.
  *
  * Return: 1 if the binary tree is perfect, 0 otherwise.
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    size_t height_left, height_right;
+	size_t height_left, height_right;
 
-    if (tree == NULL)
-        return 0;
+	if (tree == NULL)
+		return (0);
 
-    height_left = binary_tree_height(tree->left);
-    height_right = binary_tree_height(tree->right);
+	height_left = binary_tree_height(tree->left);
+	height_right = binary_tree_height(tree->right);
 
-    // Check if the tree is full and the heights of both subtrees are equal
-    if (binary_tree_is_full(tree) && height_left == height_right)
-        return 1;
+	if (binary_tree_is_full(tree) && height_left == height_right)
+		return (1);
 
-    return 0;
+	return (0);
 }
 
 /**
@@ -64,17 +64,14 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return 0;
+	if (tree == NULL)
+		return (0);
 
-    // If the current node is a leaf, it's full
-    if (tree->left == NULL && tree->right == NULL)
-        return 1;
+	if (tree->left == NULL && tree->right == NULL)
+		return (1);
 
-    // If the current node has both children, recursively check both subtrees
-    if (tree->left != NULL && tree->right != NULL)
-        return binary_tree_is_full(tree->left) && binary_tree_is_full(tree->right);
+	if (tree->left != NULL && tree->right != NULL)
+		return (binary_tree_is_full(tree->left) && binary_tree_is_full(tree->right));
 
-    // If the above conditions are not met, the tree is not full
-    return 0;
+	return (0);
 }
